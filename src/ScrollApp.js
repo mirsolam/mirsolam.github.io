@@ -23,7 +23,7 @@ function ScrollApp(props) {
     window.addEventListener("scroll", GeneralScrollHandle);
     const brownRec = document.getElementsByName("brownchild");
     const beigeRec = document.getElementsByName("beigechild");
-    //const animRec = document.getElementsByName("canvasanim");
+    //const animRec = document.getElementsByName("canvasanim"); 
 
     beigeRec.forEach((item) => {
       observer.observe(item)

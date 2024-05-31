@@ -58,8 +58,8 @@ function SequenceScroller({ p_series, ...props }) {
 
   function RenderCanvas() {
     const context = canvasRef.current.getContext("2d");
-    context.canvas.width = window.innerWidth;
-    context.canvas.height = window.innerHeight * 0.90;
+    context.canvas.width = imgDimensions.current.width;
+    context.canvas.height = imgDimensions.current.height * 0.90;
   }
 
   function HandleOnScroll(e) {

@@ -32,6 +32,9 @@ function SequenceScroller({ p_series, ...props }) {
       document
         .getElementById(p_series)
         .parentElement.parentElement.addEventListener("scroll", HandleOnScroll);
+      window.addEventListener("resize", HandleOnResize)
+      window.addEventListener("beforeunload", HandleOnBeforeUnload)
+
     } else {
       let requestId = RenderFrames();
 
@@ -71,6 +74,16 @@ function SequenceScroller({ p_series, ...props }) {
 
     if (index < 0 || index > numframes.current) return;
     setFrameIndex(index);
+  }
+
+  function HandleOnResize() {
+    const context = canvasRef.current.getContext("2d");
+    context.canvas.width = 1920;
+    context.canvas.height = window.innerHeight * 0.89;
+  }
+
+  function HandleOnBeforeUnload() {
+    setFrameIndex(0);
   }
 
   function RenderFrames() {

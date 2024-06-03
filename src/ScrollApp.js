@@ -6,6 +6,9 @@ import "./css/ScrollApp.css";
 import "./css/InlineSVG.css";
 import "animate.css";
 
+/*Video*/
+import BoulderV4 from "./video/V4.mp4"
+
 /*Components*/
 import SequenceScroller from "./components/SequenceScroller";
 
@@ -23,7 +26,6 @@ function ScrollApp(props) {
     window.addEventListener("scroll", GeneralScrollHandle);
     const brownRec = document.getElementsByName("brownchild");
     const beigeRec = document.getElementsByName("beigechild");
-    //const animRec = document.getElementsByName("canvasanim"); 
 
     beigeRec.forEach((item) => {
       observer.observe(item)
@@ -131,19 +133,6 @@ function ScrollApp(props) {
     }
   }
 
-  // function AnimateCss(element, animation) {
-  //   const PREFIX = "animate__animated";
-  //   element.classList.add(PREFIX, animation);
-  //   element.addEventListener(
-  //     "animationend",
-  //     function (e) {
-  //       e.stopPropagation();
-  //       e.target.classList.remove(PREFIX, animation);
-  //     },
-  //     { once: true }
-  //   );
-  // }
-
   return (
     <main className="ScrollApp" id="scrollapp">
       <div className="container-fluid">
@@ -245,10 +234,9 @@ function ScrollApp(props) {
                 <div className="centered-view beige-text main-content-text">
                   My stack
                 </div>
-                <div className="centered-view" /*data-hasanimation="true"*/>
+                <div className="centered-view">
                   <div
                     className="stack-group-photo"
-                  /*data-isanimated="animate__fadeIn"*/
                   />
                 </div>
               </div>
@@ -457,22 +445,16 @@ function ScrollApp(props) {
                 </div>
               </div>
             </div>
-            {/* <div className="full-view snap-child" name="beigechild" data-menu="navmenu_hobbies">
-              <div className="row p-align-content mb-3">
-                <div className="centered-view main-content-title brown-text mb-5">
-                  Art
-                </div>
-                <div className="centered-view main-content-text px-20 mb-5">
-                  Coming back indoors, I really enjoy immersing myself into music and drawing.
-                </div>
-                <div className="centered-view main-content-text px-20 mb-5">
-                  I am not particularly good at either of them but I get lost in them once I start. My favorite musical instruments is the drums, but I am also trying to learn a traditional Persian instrument known as the Setar.
-                </div>
-                <div className="centered-view main-content-text px-20">
-                  As for drawing, I mainly create art through Photoshop and at times I draw by hand.
+            <div className="full-view snap-child" name="beigechild" data-menu="navmenu_hobbies">
+              <div className="row p-align-content mt-5">
+                <div className="centered-view">
+                  <video width={window.innerWidth * 0.60} height={window.innerHeight * 0.80} controls muted>
+                    <source src={BoulderV4} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className="full-view brown-theme snap-child" id="section_contact" name="brownchild" data-menu="navmenu_contact">
               <div className="centered-view  row p-align-content mb-3">
                 <div className="centered-view beige-text main-content-title mb-5">
@@ -491,7 +473,6 @@ function ScrollApp(props) {
                     <div className="linkedin-icon" />
                     LinkedIn Profile
                   </a>
-
                 </div>
               </div>
             </div>

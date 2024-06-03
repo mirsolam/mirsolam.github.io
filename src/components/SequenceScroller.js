@@ -10,7 +10,6 @@ function SequenceScroller({ p_series, ...props }) {
   const [images, setImages] = useState([]);
   const [frameIndex, setFrameIndex] = useState(0);
   const frames = useRef();
-  const imgDimensions = useRef()
 
   const numframes = useRef();
 
@@ -50,7 +49,6 @@ function SequenceScroller({ p_series, ...props }) {
     frames.current[p_series].map((item) => {
       const img = new Image();
       img.src = item;
-      imgDimensions.current = img
       setImages((prev) => [...prev, img]);
       return true;
     });
@@ -58,8 +56,8 @@ function SequenceScroller({ p_series, ...props }) {
 
   function RenderCanvas() {
     const context = canvasRef.current.getContext("2d");
-    context.canvas.width = imgDimensions.current.width;
-    context.canvas.height = imgDimensions.current.height * 0.90;
+    context.canvas.width = 1920;
+    context.canvas.height = window.innerHeight * 0.89;
   }
 
   function HandleOnScroll(e) {

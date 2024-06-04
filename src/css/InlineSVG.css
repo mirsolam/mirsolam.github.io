@@ -115,6 +115,30 @@
   }
 }
 
+@media screen and (max-height: 40rem) {
+  .egma-photo, .aus-photo {
+    height: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  .astrautm-photo{
+    height: 3rem;
+    margin-bottom: 0rem;
+  }
+
+  .egma-photo-details {
+    margin-top: 0rem;
+  }
+
+  .egma-photo {
+    right: 20rem;
+  }
+
+  .aus-photo-details {
+    margin-bottom: 0rem !important;
+  }
+}
+
 /*Tablet*/
 @media screen and (max-width: 64rem) {
   .egma-photo, .astrautm-photo, .aus-photo {

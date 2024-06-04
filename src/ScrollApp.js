@@ -293,14 +293,14 @@ function ScrollApp(props) {
             </div>
             <div className="full-view snap-child" name="beigechild" data-menu="navmenu_experience">
               <div className="row p-align-content mb-3">
-                <div className="centered-view main-content-title brown-text mb-5">
+                <div className="centered-view main-content-title brown-text egma-intro">
                   <div className="egma-photo" />
                   Lead Front-end Developer
                 </div>
-                <div className="centered-view main-content-text brown-text mb-5">
+                <div className="centered-view main-content-text brown-text egma-intro">
                   Egma Optical Lens
                 </div>
-                <div className="centered-view main-content-text brown-text mb-5 px-20">
+                <div className="centered-view main-content-text brown-text egma-intro px-20">
                   Feb 2023 – Jan 2024 Dubai, United Arab Emirates
                 </div>
                 <div className="centered-view main-content-text px-20">

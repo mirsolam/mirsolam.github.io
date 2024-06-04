@@ -251,10 +251,24 @@ transform: scaleX(1);
   display: none;
 }
 
+.egma-intro{
+  margin-bottom: 3rem !important;
+}
+
 /*Monitor*/
 @media screen and (max-width: 98rem) {
   .main-content-text, .main-content-title {
     font-size: calc(0.65rem + 1vw);
+  }
+}
+
+@media screen and (max-height: 40rem){
+  .font-xlarge {
+    font-size: calc(0.15rem + 1vw) !important;
+  }
+
+  .egma-intro{
+    margin-bottom: 2rem !important;
   }
 }
 

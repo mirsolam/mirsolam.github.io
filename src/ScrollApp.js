@@ -27,6 +27,17 @@ function ScrollApp(props) {
     const brownRec = document.getElementsByName("brownchild");
     const beigeRec = document.getElementsByName("beigechild");
 
+    if (document.getElementById("boulder-video").childElementCount === 0) {
+      const vid = document.createElement("video");
+      vid.src = BoulderV4
+      vid.width = window.innerWidth * 0.60
+      vid.height = window.innerHeight * 0.80
+      vid.controls = "controls"
+      vid.muted = true
+
+      document.getElementById("boulder-video").appendChild(vid)
+    }
+
     beigeRec.forEach((item) => {
       observer.observe(item)
     })
@@ -447,11 +458,7 @@ function ScrollApp(props) {
             </div>
             <div className="full-view snap-child" name="beigechild" data-menu="navmenu_hobbies">
               <div className="row p-align-content mt-5">
-                <div className="centered-view">
-                  <video width={window.innerWidth * 0.60} height={window.innerHeight * 0.80} controls muted>
-                    <source src={BoulderV4} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                <div className="centered-view" id="boulder-video">
                 </div>
               </div>
             </div>

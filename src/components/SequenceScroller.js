@@ -17,7 +17,7 @@ function SequenceScroller({ p_series, ...props }) {
     if (!frames.current) {
       frames.current = {
         location: importAll(
-          require.context("../frames/location", false, /\.(png)$/)
+          require.context("../frames/location", false, /\.(webp)$/)
         ),
         university: importAll(
           require.context("../frames/university", false, /\.(jpg)$/)
@@ -52,6 +52,7 @@ function SequenceScroller({ p_series, ...props }) {
     frames.current[p_series].map((item) => {
       const img = new Image();
       img.src = item;
+      img.decoding = "async"
       setImages((prev) => [...prev, img]);
       return true;
     });

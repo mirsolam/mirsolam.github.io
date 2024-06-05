@@ -8,7 +8,7 @@ import ScrollApp from "./ScrollApp";
 
 /*CSS*/
 import "./css/index.css";
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

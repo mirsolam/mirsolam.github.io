@@ -4,10 +4,13 @@ import { useRef, useEffect } from "react";
 /*CSS*/
 import "./css/ScrollApp.css";
 import "./css/InlineSVG.css";
-import "animate.css";
+// import "animate.css";
 
-/*Video*/
+/*Videos*/
 import BoulderV4 from "./video/V4.mp4"
+
+/*Images*/
+import BoulderPoster from "./frames/video-poster/boulderv4-01.webp"
 
 /*Components*/
 import SequenceScroller from "./components/SequenceScroller";
@@ -28,14 +31,15 @@ function ScrollApp(props) {
     const beigeRec = document.getElementsByName("beigechild");
 
     if (document.getElementById("boulder-video").childElementCount === 0) {
-      const vid = document.createElement("video");
-      vid.src = BoulderV4
-      vid.width = window.innerWidth * 0.60
-      vid.height = window.innerHeight * 0.80
-      vid.controls = "controls"
-      vid.muted = true
+      // const vid = document.createElement("video");
+      // vid.src = BoulderV4
+      // vid.width = window.innerWidth * 0.60
+      // vid.height = window.innerHeight * 0.80
+      // vid.controls = "controls"
+      // vid.muted = true
+      // vid.preload = "none"
 
-      document.getElementById("boulder-video").appendChild(vid)
+      // document.getElementById("boulder-video").appendChild(vid)
     }
 
     beigeRec.forEach((item) => {
@@ -459,6 +463,7 @@ function ScrollApp(props) {
             <div className="full-view snap-child" name="beigechild" data-menu="navmenu_hobbies">
               <div className="row p-align-content mt-5">
                 <div className="centered-view" id="boulder-video">
+                  <video src={BoulderV4} width={window.innerWidth * 0.60} height={window.innerHeight * 0.80} preload="none" controls muted poster={BoulderPoster} />
                 </div>
               </div>
             </div>

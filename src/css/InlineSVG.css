@@ -101,6 +101,10 @@
   max-width: 100%;
 }
 
+img {
+  content-visibility: auto;
+}
+
 /*Monitor*/
 @media screen and (max-width: 98rem) {
   .egma-photo, .astrautm-photo, .aus-photo {

@@ -119,30 +119,6 @@ img {
   }
 }
 
-@media screen and (max-height: 40rem) {
-  .egma-photo, .aus-photo {
-    height: 4rem;
-    margin-bottom: 0rem;
-  }
-
-  .astrautm-photo{
-    height: 3rem;
-    margin-bottom: 0rem;
-  }
-
-  .egma-photo-details {
-    margin-top: 0rem;
-  }
-
-  .egma-photo {
-    right: 20rem;
-  }
-
-  .aus-photo-details {
-    margin-bottom: 0rem !important;
-  }
-}
-
 /*Tablet*/
 @media screen and (max-width: 64rem) {
   .egma-photo, .astrautm-photo, .aus-photo {
@@ -174,5 +150,59 @@ img {
     width: 5rem;
     right: 4rem;
     margin-bottom: 8rem;
+  }
+}
+
+@media screen and (max-height: 40rem) {
+  .egma-photo, .aus-photo {
+    height: 4rem;
+    margin-bottom: 0rem;
+  }
+
+  .astrautm-photo{
+    height: 3rem;
+    margin-bottom: 0rem;
+  }
+
+  .egma-photo-details {
+    margin-top: 2rem;
+  }
+
+  .aus-photo-details {
+    margin-bottom: 0rem !important;
+  }
+}
+
+@media screen and (max-height: 32rem) {
+  .egma-photo{
+    height: 4rem;
+    right: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  .egma-photo-details {
+    height: 4rem;
+    margin-top: 4rem;
+  }
+
+  .astrautm-photo {
+    height: 3rem;
+    right: 4rem;
+    margin-bottom: 4rem;
+  }
+  
+  .aus-photo {
+    height: 4rem;
+    right: 4rem;
+    margin-bottom: 8rem;
+  }
+}
+
+@media screen and (max-width: 24rem){
+  .egma-photo, .astrautm-photo, .aus-photo{
+    height: 5rem;
+    width: 3rem;
+    right: 5rem;
+    margin-bottom: 6rem;
   }
 }

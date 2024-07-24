@@ -235,8 +235,9 @@ transform: scaleX(1);
   width: 100%
 }
 
-.font-xlarge{
+.main-content-list{
   font-size: calc(0.25rem + 1vw)!important;
+  text-align: justify;
 }
 
 .box-click{
@@ -262,16 +263,6 @@ transform: scaleX(1);
   }
 }
 
-@media screen and (max-height: 40rem){
-  .font-xlarge {
-    font-size: calc(0.15rem + 1vw) !important;
-  }
-
-  .egma-intro{
-    margin-bottom: 2rem !important;
-  }
-}
-
 /*Tablet*/
 @media screen and (max-width: 64rem) {
   .px-20{
@@ -283,12 +274,17 @@ transform: scaleX(1);
     padding-top: 16rem;
   }
 
-  .font-xlarge {
+  .main-content-list {
     font-size: calc(0.25rem + 2vw) !important;
   }
 }
 
-/*Phone*/
+@media screen and (max-width: 50rem){
+  .main-content-list {
+    font-size: calc(0.25rem + 2vw) !important;
+  }
+}
+
 @media screen and (max-width: 48rem) {
   .sticky-mobile-menu{
     display: block;
@@ -344,13 +340,31 @@ transform: scaleX(1);
   }
 }
 
-@media screen and (max-width: 24rem) {
-  .font-xlarge {
-    font-size: calc(0.2rem + 2vw) !important;
+@media screen and (max-height: 44rem){
+  .main-content-list {
+    font-size: calc(0.35rem + 1vw) !important;
   }
 
+  .egma-intro{
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media screen and (max-height: 37.5rem){
+  .scrollable-parent {
+    padding-top: 7rem;
+  }
+}
+
+
+/*Phone*/
+@media screen and (max-width: 24rem) {
   .main-content-text, .main-content-title {
     font-size: calc(0.65rem + 1vw);
+  }
+
+  .main-content-list {
+    font-size: calc(0.2rem + 2vw) !important;
   }
 }
 

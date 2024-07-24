@@ -331,23 +331,23 @@ function ScrollApp(props) {
                 </div>
                 <div className="centered-view">
                   <ul className="px-20">
-                    <li className="beige-text main-content-text font-xlarge mb-3">I managed and <strong>coached</strong> the company’s front-end team</li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">Completed multiple projects from scratch</li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">Used <strong>React.js</strong> for front-end development</li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">Managed the project <strong>GitHub</strong> repository</li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">
+                    <li className="beige-text main-content-list mb-3">I managed and <strong>coached</strong> the company’s front-end team</li>
+                    <li className="beige-text main-content-list mb-3">Completed multiple projects from scratch</li>
+                    <li className="beige-text main-content-list mb-3">Used <strong>React.js</strong> for front-end development</li>
+                    <li className="beige-text main-content-list mb-3">Managed the project <strong>GitHub</strong> repository</li>
+                    <li className="beige-text main-content-list mb-3">
                       Successfully created a sophisticated and dynamic code structure that decreased code duplication and files by at least <strong>50%</strong> while allowing seamless integration and addition of new features, functionalities, and modifications
                     </li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">
+                    <li className="beige-text main-content-list mb-3">
                       Successfully created highly structured and optimized <strong>APIs</strong> using <strong>Node.js</strong> to process and return data from the company's database that had a structure which was incompatible with the required website design and functional requirements
                     </li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">
+                    <li className="beige-text main-content-list mb-3">
                       Used <strong>AWS</strong>, specifically S3 Bucket, to retrieve and store files dynamically
                     </li>
-                    <li className="beige-text main-content-text font-xlarge mb-3">
+                    <li className="beige-text main-content-list mb-3">
                       Performed unit and system <strong>testing</strong> and debugging
                     </li>
-                    <li className="beige-text main-content-text font-xlarge">
+                    <li className="beige-text main-content-list">
                       Successfully <strong>communicated</strong> with and translated the client’s requirements into features and functionality
                     </li>
                   </ul>
@@ -377,19 +377,19 @@ function ScrollApp(props) {
                 </div>
                 <div className="centered-view">
                   <ul className="astrautm-details mt-5 px-20 ">
-                    <li className="beige-text main-content-text text-start font-xlarge mb-3">
+                    <li className="beige-text main-content-list text-start mb-3">
                       Re-built <strong>20+</strong> web pages, made previously using C# and MVC, with React.js and Redux to improve performance and allow for seamless user interactions.
                     </li>
-                    <li className="beige-text main-content-text text-start font-xlarge mb-3">
+                    <li className="beige-text main-content-list text-start mb-3">
                       Redesigned 3D model rendering and animation and merged it with 2D rendering to improve the application performance by over <strong>50%</strong>.
                     </li>
-                    <li className="beige-text main-content-text text-start font-xlarge mb-3">
+                    <li className="beige-text main-content-list text-start mb-3">
                       Successfully integrated new features and approaches that enhanced the development process and the user experience, resulting in a more efficient workflow.
                     </li>
-                    <li className="beige-text main-content-text text-start font-xlarge mb-3">
+                    <li className="beige-text main-content-list text-start mb-3">
                       Created a <strong>GIS web application</strong> using React.js, Mapbox, and Three.js
                     </li>
-                    <li className="beige-text main-content-text text-start font-xlarge mb-3">
+                    <li className="beige-text main-content-list text-start mb-3">
                       Created new and updated previously available <strong>APIs</strong> using .NET and C# to allow for the development of new features.
                     </li>
                   </ul>

@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  --primary-background: #FAEED6;
+  --primary-foreground: #260F00;
+
+  --secondary-background: #260F00;
+  --secondary-foreground: #FAEED6;
+
+  --dark-mode-primary-background: #FAEED6;
+  --dark-mode-primary-foreground: #260F00;
+
+  --dark-mode-secondary-background: #260F00;
+  --dark-mode-secondary-foreground: #FAEED6;
+
+  --test-color: red;
+}
+
+@theme inline {
+  --color-background: var(--primary-background);
+  --color-foreground: var(--primary-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --breakpoint-xs: 300px;
+
+  --breakpoint-xsh: min-height: 650px
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark-mode-primary-background);
+    --foreground: var(--dark-mode-primary-foreground);
+  }
+} */
+
+body {
+  background: var(--primary-background);
+  color: var(--primary-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.secondary-theme {
+  background: var(--secondary-background);
+  color: var(--secondary-foreground);
+}
+
+.primary-theme {
+  background: var(--primary-background);
+  color: var(--primary-foreground);
+}
+
+body.secondary-theme {
+  background: var(--secondary-background);
+  color: var(--secondary-foreground);
+}
+
+.nav-text {
+  transition: all 0s linear;
+  transition-delay: 0.2s;
+}
+
+.nav-text.secondary-theme {
+  color: var(--secondary-foreground);
+}
+
+.nav-text.active {
+  text-decoration: underline;
+}
+
+.parent-label-float {
+  /* display: grid; */
+  height: 1rem;
+  top: -0.9rem;
+  width: 4rem;
+  background: #260F00;
+}
+
+.input-border {
+  /* display: grid; */
+  height: 3rem;
+  width: 13.5rem;
+}
+
+.input-border:has(> .parent-textarea-float) {
+  height: 16.5rem;
+  width: 27.5rem;
+}
+
+
+.parent-input-float {
+  /* margin-top: -2rem; */
+}
+
+.child-input-float {
+  color: var(--primary-foreground);
+  background-color: var(--primary-background);
+  padding-left: 4px;
+  position: relative;
+  top: -0.5rem
+}
+
+.child-textarea-float {
+  color: var(--primary-foreground);
+  background-color: var(--primary-background);
+  resize: none;
+  padding-left: 4px;
+  width: 26rem;
+  height: 14.5rem;
+}
+
+.long-parent-label {
+  width: 5.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.child-form-button {
+  height: 2rem;
+  width: 10rem;
+}
+
+.mobile-side-nav-parent {
+  background-color: var(--secondary-background);
+  width: 15rem;
+  height: 30rem;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+
+.mobile-side-nav-parent.inactive {
+  visibility: hidden;
+  width: 0;
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 300px) {
+  .input-border {
+    height: 3rem;
+    width: 15.5rem;
+  }
+
+  .input-border:has(> .parent-textarea-float) {
+    height: 12.5rem;
+    width: 16.5rem;
+  }
+
+  .child-input-float {
+    width: 14.5rem;
+  }
+
+  .child-textarea-float {
+  width: 15rem;
+  height: 10.5rem;
+  }
+}
+
+@media only screen and (max-height: 865px) {
+  .contacts-main-screen {
+    height: calc(100vh + 10rem);
+  }
+}

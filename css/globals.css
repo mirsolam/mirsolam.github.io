@@ -1,19 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --primary-background: #FAEED6;
-  --primary-foreground: #260F00;
+  --primary-background: #48171b;
+  --primary-foreground: #d0ab66;
 
-  --secondary-background: #260F00;
-  --secondary-foreground: #FAEED6;
+  --dark-mode-primary-background: #faeed6;
+  --dark-mode-primary-foreground: #260f00;
 
-  --dark-mode-primary-background: #FAEED6;
-  --dark-mode-primary-foreground: #260F00;
-
-  --dark-mode-secondary-background: #260F00;
-  --dark-mode-secondary-foreground: #FAEED6;
+  --dark-mode-secondary-background: #260f00;
+  --dark-mode-secondary-foreground: #faeed6;
 
   --test-color: red;
+
+  --home-side-accent-margin: 0px;
+  --home-side-accent-width: 0px;
+
+  --home-continue-length: 37.3rem;
+  --whoami-continue-length: 14.8rem;
+  --stack-continue-length: 12.8rem;
+  --certificates-continue-length: 31.3rem;
+  --projects-continue-length: 20.1rem;
 }
 
 @theme inline {
@@ -23,8 +29,8 @@
   --font-mono: var(--font-geist-mono);
 
   --breakpoint-xs: 300px;
-
-  --breakpoint-xsh: min-height: 650px
+  --breakpoint-mxs: 375px;
+  --breakpoint-lxs: 425px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -41,8 +47,8 @@ body {
 }
 
 .secondary-theme {
-  background: var(--secondary-background);
-  color: var(--secondary-foreground);
+  background: var(--primary-background);
+  color: var(--primary-foreground);
 }
 
 .primary-theme {
@@ -50,18 +56,28 @@ body {
   color: var(--primary-foreground);
 }
 
+.gradient-theme {
+  background: linear-gradient(
+    var(--primary-background),
+    #7c272e,
+    var(--primary-background)
+  );
+  color: var(--primary-foreground);
+}
+
 body.secondary-theme {
-  background: var(--secondary-background);
-  color: var(--secondary-foreground);
+  background: var(--primary-background);
+  color: var(--primary-foreground);
 }
 
 .nav-text {
+  margin: 0 4rem;
   transition: all 0s linear;
   transition-delay: 0.2s;
 }
 
 .nav-text.secondary-theme {
-  color: var(--secondary-foreground);
+  color: var(--primary-foreground);
 }
 
 .nav-text.active {
@@ -69,15 +85,14 @@ body.secondary-theme {
 }
 
 .parent-label-float {
-  /* display: grid; */
   height: 1rem;
   top: -0.9rem;
   width: 4rem;
-  background: #260F00;
+  background: var(--primary-background);
 }
 
 .input-border {
-  /* display: grid; */
+  border: var(--primary-foreground) 2px solid;
   height: 3rem;
   width: 13.5rem;
 }
@@ -87,22 +102,21 @@ body.secondary-theme {
   width: 27.5rem;
 }
 
-
-.parent-input-float {
-  /* margin-top: -2rem; */
+.child-label-float {
+  color: #faeed6;
 }
 
 .child-input-float {
-  color: var(--primary-foreground);
-  background-color: var(--primary-background);
+  color: var(--primary-background);
+  background-color: #faeed6;
   padding-left: 4px;
   position: relative;
-  top: -0.5rem
+  top: -0.5rem;
 }
 
 .child-textarea-float {
-  color: var(--primary-foreground);
-  background-color: var(--primary-background);
+  color: var(--primary-background);
+  background-color: #faeed6;
   resize: none;
   padding-left: 4px;
   width: 26rem;
@@ -121,7 +135,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -130,17 +144,209 @@ input[type=number] {
   width: 10rem;
 }
 
+.custom-button {
+  background-color: var(--primary-foreground);
+  border: #faeed6 2px solid;
+  color: #faeed6;
+}
+
+.accent-test {
+  height: 21.5rem;
+  position: absolute;
+  border-right: var(--primary-foreground) 1px solid;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+
+.accent-extra {
+  height: 0rem;
+  position: absolute;
+  border-right: var(--primary-foreground) 2px solid;
+  transition-behavior: allow-discrete;
+  transition: all 1s linear;
+}
+.accent-extra.stretch {
+  height: 2rem;
+}
+
+.accent-line {
+  width: var(--home-side-accent-width);
+  position: absolute;
+  border-bottom: var(--primary-foreground) 2px solid;
+  transition-behavior: allow-discrete;
+  transition: width 0.5s linear;
+}
+
+.accent-line.contract {
+  width: 0rem;
+}
+
+.accent-continue {
+  height: 0rem;
+  position: absolute;
+  border-right: var(--primary-foreground) 2px solid;
+  transition-behavior: allow-discrete;
+  transition: all 1s linear;
+}
+
+.accent-continue.home-len {
+  height: var(--home-continue-length);
+}
+
+.accent-continue.whoami-len {
+  height: var(--whoami-continue-length);
+}
+
+.accent-continue.stack-len {
+  height: var(--stack-continue-length);
+}
+
+.accent-continue.certificates-len {
+  height: var(--certificates-continue-length);
+}
+
+.accent-continue.projects-len {
+  height: var(--projects-continue-length);
+}
+
+.accent-begin {
+  height: 12.2rem;
+  position: absolute;
+  border-right: transparent 1px solid;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+.accent-begin.short {
+  height: 12rem;
+  border-right: transparent 1px solid;
+}
+.accent-begin.stretch {
+  height: 18rem;
+}
+
+.accent-left-triangle-up {
+  width: 0rem;
+  position: absolute;
+  border-top: 2px solid var(--primary-foreground);
+  transform: rotate(315deg);
+  transform-origin: top right;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+
+.accent-left-triangle-up.stretch {
+  width: 10rem;
+}
+
+.accent-right-triangle-up {
+  width: 0rem;
+  position: absolute;
+  border-top: 2px solid var(--primary-foreground);
+  transform: rotate(45deg);
+  transform-origin: top left;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+
+.accent-right-triangle-up.stretch {
+  width: 10rem;
+}
+
+.accent-left-triangle-down {
+  width: 0rem;
+  position: absolute;
+  border-top: 2px solid var(--primary-foreground);
+  transform: rotate(45deg);
+  transform-origin: top right;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+
+.accent-left-triangle-down.stretch {
+  width: 10rem;
+}
+
+.accent-right-triangle-down {
+  width: 0rem;
+  position: absolute;
+  border-top: 2px solid var(--primary-foreground);
+  transform: rotate(315deg);
+  transform-origin: top left;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+
+.accent-right-triangle-down.stretch {
+  width: 10rem;
+}
+
+.accent-end {
+  height: 0rem;
+  position: absolute;
+  border-right: var(--primary-foreground) 1px solid;
+  transition-behavior: allow-discrete;
+  transition: all 0.5s linear;
+}
+.accent-end.short {
+  height: 7.5rem;
+}
+.accent-end.stretch {
+  height: 17.5rem;
+}
+
 .mobile-side-nav-parent {
-  background-color: var(--secondary-background);
+  background-color: var(--primary-background);
+  border: 2px solid var(--primary-foreground);
   width: 15rem;
-  height: 30rem;
+  height: 22rem;
   transition-behavior: allow-discrete;
   transition: all 0.5s linear;
 }
 
 .mobile-side-nav-parent.inactive {
   visibility: hidden;
+  border: 0px;
   width: 0;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 300px) {
+  .accent-line {
+    width: 4rem;
+  }
+
+  .accent-left-triangle-up.stretch {
+    width: 7rem;
+  }
+
+  .accent-right-triangle-up.stretch {
+    width: 7rem;
+  }
+
+  .accent-left-triangle-down.stretch {
+    width: 7rem;
+  }
+
+  .accent-right-triangle-down.stretch {
+    width: 7rem;
+  }
+}
+
+@media only screen and (max-width: 1125px) and (min-width: 1024px) {
+  .nav-text {
+    margin: 0 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1226px) and (min-width: 1126px) {
+  .nav-text {
+    margin: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 1740px) and (min-width: 1226px) {
+  .nav-text {
+    margin: 0 3rem;
+  }
 }
 
 @media only screen and (max-width: 1279px) and (min-width: 300px) {
@@ -159,13 +365,7 @@ input[type=number] {
   }
 
   .child-textarea-float {
-  width: 15rem;
-  height: 10.5rem;
-  }
-}
-
-@media only screen and (max-height: 865px) {
-  .contacts-main-screen {
-    height: calc(100vh + 10rem);
+    width: 15rem;
+    height: 10.5rem;
   }
 }

@@ -1,20 +1,48 @@
 export default function Certificates() {
-    return (
-        <div id="section_certificates" data-name="section" className="secondary-theme w-full">
-            <div className="h-screen grid grid-row-1 items-center justify-items-center">
-                <div className="grid xl:grid-cols-4 sm:grid-cols-4 xs:grid-cols-1">
-                    <div className="xl:col-start-3 sm:col-start-2 xs:col-start-2 xl:col-span-1 sm:col-span-3">
-                        <div className="text-2xl font-bold text-center">My Certificates</div>
-                    </div>
-                    <div className="xl:col-start-2 sm:col-start-2 xs:col-start-2 xl:col-span-3 sm:col-span-3">
-                        <div className="row-start-1 items-center justify-items-center">
-                            <div className="certificate-group-pic xl:w-[60vw] lg:w-[60vw] sm:w-[60vw] xs:w-[90vw]  mt-[4rem]" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+  return (
+    <div
+      id="section_certificates"
+      data-name="section"
+      data-index="3"
+      className="gradient-theme w-full"
+    >
+      <div className="h-screen grid grid-row-1 items-center justify-items-center">
+        <div className="grid row-start-1 items-center justify-items-center">
+          <div className="grid items-center justify-items-end">
+            <div
+              id="accent_left_triangleup_certificates"
+              className="accent-left-triangle-up mt-[-10.4rem] mr-[0px] xs:mr-[0px]"
+            />
+          </div>
+          <div className="grid items-center justify-items-start">
+            <div
+              id="accent_right_triangleup_certificates"
+              className="accent-right-triangle-up mt-[-10.4rem] sm:ml-[2px] xs:ml-[2px]"
+            />
+          </div>
 
-export const STACK_SECTION_NUMBER = 2;
+          <div className="certificates-group-pic sm:mt-[7.4rem] xs:mt-[5rem]" />
+
+          <div className="grid items-center justify-items-end">
+            <div
+              id="accent_left_triangledown_certificates"
+              className="accent-left-triangle-down mt-[9rem] mr-[-2px]"
+            />
+          </div>
+          <div className="grid items-center justify-items-start">
+            <div
+              id="accent_right_triangledown_certificates"
+              className="accent-right-triangle-down mt-[9rem]"
+            />
+          </div>
+          <div className="grid items-start">
+            <div
+              id="accent_continue_certificates"
+              className="accent-continue mr-[-1px] mt-[4.5rem] z-1"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

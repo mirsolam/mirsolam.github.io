@@ -1,1 +1,1 @@
-To access my Portfolio, please click [Here](https://mirsolam.com/).
+To access my Portfolio, please visit (https://mirsolam.github.io).

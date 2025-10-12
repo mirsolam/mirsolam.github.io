@@ -1,18 +1,42 @@
 export default function Home() {
-    return (
-        <div id="section_home" data-name="section" className="primary-theme w-full">
-            <div className="grid xl:grid-cols-6 sm:grid-cols-4 xs:grid-cols-1">
-                <div className="xl:col-start-4 sm:col-start-2 xl:col-span-1 sm:col-span-3">
-                    <div className="h-screen grid grid-row-1 items-center justify-items-center">
-                        <div className="row-start-1">
-                            <div className="cv-pic" />
-                            <div className="lg:text-2xl sm:text-lg xs:text-lg">Amirhossein</div>
-                            <div className="lg:text-2xl sm:text-lg xs:text-lg">Full-stack Developer</div>
-                            <div className="lg:text-2xl sm:text-lg xs:text-lg">Computer Science Bachelor</div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <div
+      id="section_home"
+      data-name="section"
+      data-index="0"
+      data-continue-classname="stretch"
+      className="primary-theme w-full"
+    >
+      <div className="h-screen grid grid-row-1 items-center justify-items-center">
+        <div className="grid row-start-1 items-center justify-items-center">
+          <div className="grid grid-cols-3 items-center justify-items-center">
+            <div className="grid col-start-1 items-center justify-items-end">
+              <div
+                id="accent_left_home"
+                className="accent-line xs:mr-(--home-side-accent-margin)"
+              />
             </div>
+            <div
+              id="logo_home"
+              className="grid col-start-2 items-center justify-items-center"
+            >
+              <div className="logo-pic sm:w-[17rem] xs:w-[10rem]" />
+              <div className="grid items-start justify-items-center">
+                <div
+                  id="accent_continue_home"
+                  className="accent-continue mt-[-1px]"
+                />
+              </div>
+            </div>
+            <div className="grid col-start-3 items-center justify-items-start">
+              <div
+                id="accent_right_home"
+                className="accent-line xs:ml-(--home-side-accent-margin)"
+              />
+            </div>
+          </div>
         </div>
-    );
-};
+      </div>
+    </div>
+  );
+}

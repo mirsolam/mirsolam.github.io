@@ -2,12 +2,17 @@
 import FloatingBorderInput from "@/app/(components)/_floating_border_input_field";
 import CustomButton from "@/app/(components)/_custom_button";
 import { sendEmailForm } from "@/app/api/_telegram";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Contacts() {
   const [disabled, setDisabled] = useState(false);
   const [showConfirmationMessage, setShowConfirmationMessage] = useState(false);
-  const [screen] = useState(window.matchMedia("(min-width: 768px)").matches);
+  const [screen, setScreen] = useState(null as unknown as boolean);
+
+  useEffect(() => {
+    if (!screen && window)
+      setScreen(window.matchMedia("(min-width: 768px)").matches);
+  }, [screen]);
 
   function isFormEmpty() {
     const name = (
@@ -72,21 +77,22 @@ export default function Contacts() {
       data-continue-classname="stretch"
       className="primary-theme w-full"
     >
-      {screen ? (
-        <div className="h-screen grid grid-row-1 items-center justify-items-center">
-          <div className="grid row-start-1 items-center justify-items-center">
-            <div className="grid items-start justify-items-end">
-              <div
-                id="accent_left_triangleup_contacts"
-                className="accent-left-triangle-up mt-[-8.85rem] mr-[-1px] xs:mr-[0px]"
-              />
-            </div>
-            <div className="grid items-start justify-items-start">
-              <div
-                id="accent_right_triangleup_contacts"
-                className="accent-right-triangle-up mt-[-8.85rem] ml-[2px] xs:ml-[2px]"
-              />
-            </div>
+      <div className="h-screen grid grid-row-1 items-center justify-items-center">
+        <div className="grid row-start-1 items-center justify-items-center">
+          <div className="grid items-start justify-items-end">
+            <div
+              id="accent_left_triangleup_contacts"
+              className="accent-left-triangle-up mt-[-8.85rem] mr-[-1px] xs:mr-[0px]"
+            />
+          </div>
+          <div className="grid items-start justify-items-start">
+            <div
+              id="accent_right_triangleup_contacts"
+              className="accent-right-triangle-up mt-[-8.85rem] ml-[2px] xs:ml-[2px]"
+            />
+          </div>
+
+          {screen ? (
             <div className="grid grid-cols-2">
               <div className="grid col-start-1 items-start justify-items-center">
                 <FloatingBorderInput name={"Name"} disabled={disabled} />
@@ -124,97 +130,63 @@ export default function Contacts() {
                 <CustomButton onClick={generalOnClick} />
               </div>
             </div>
-
-            <div className="grid items-start justify-items-end">
-              <div
-                id="accent_left_triangledown_contacts"
-                className="accent-left-triangle-down mt-[9rem] mr-[-2px]"
-              />
-            </div>
-            <div className="grid items-start justify-items-start">
-              <div
-                id="accent_right_triangledown_contacts"
-                className="accent-right-triangle-down mt-[9rem]"
-              />
-            </div>
-            <div className="grid items-start">
-              <div
-                id="accent_continue_contacts"
-                className="accent-continue mr-[-1px] mt-[9rem] z-1"
-              />
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="h-screen grid grid-row-1 items-center justify-items-center">
-          <div className="grid row-start-1 items-center justify-items-center">
-            <div className="grid items-center justify-items-end">
-              <div
-                id="accent_left_triangleup_contacts"
-                className="accent-left-triangle-up mt-[-12.8rem] mr-[-1px] xs:mr-[0px]"
-              />
-            </div>
-            <div className="grid items-center justify-items-start">
-              <div
-                id="accent_right_triangleup_contacts"
-                className="accent-right-triangle-up mt-[-12.8rem] ml-[2px] mxs:ml-[1px] xs:ml-[2px]"
-              />
-            </div>
-
-            <FloatingBorderInput name={"Name"} disabled={disabled} />
-            <FloatingBorderInput
-              name={"E-mail"}
-              type="email"
-              disabled={disabled}
-            />
-            <FloatingBorderInput
-              name={"Company"}
-              customParentLabelClass="long-parent-label"
-              disabled={disabled}
-            />
-            <FloatingBorderInput
-              name={"Phone"}
-              type="number"
-              disabled={disabled}
-            />
-            {!showConfirmationMessage ? (
+          ) : (
+            <>
+              <FloatingBorderInput name={"Name"} disabled={disabled} />
               <FloatingBorderInput
-                name={"Message"}
-                customParentLabelClass="long-parent-label"
-                textArea={true}
+                name={"E-mail"}
+                type="email"
                 disabled={disabled}
-                textAreaRows={screen ? 7 : 6}
-                textAreaCols={screen ? 29 : 25}
               />
-            ) : (
-              <div className="text-base text-justified">
-                Your message as been sent. Thank you!
-              </div>
-            )}
+              <FloatingBorderInput
+                name={"Company"}
+                customParentLabelClass="long-parent-label"
+                disabled={disabled}
+              />
+              <FloatingBorderInput
+                name={"Phone"}
+                type="number"
+                disabled={disabled}
+              />
+              {!showConfirmationMessage ? (
+                <FloatingBorderInput
+                  name={"Message"}
+                  customParentLabelClass="long-parent-label"
+                  textArea={true}
+                  disabled={disabled}
+                  textAreaRows={screen ? 7 : 6}
+                  textAreaCols={screen ? 29 : 25}
+                />
+              ) : (
+                <div className="text-base text-justified">
+                  Your message as been sent. Thank you!
+                </div>
+              )}
 
-            <CustomButton onClick={generalOnClick} />
+              <CustomButton onClick={generalOnClick} />
+            </>
+          )}
 
-            <div className="grid items-start justify-items-end">
-              <div
-                id="accent_left_triangledown_contacts"
-                className="accent-left-triangle-down mt-[9rem] mr-[-2px]"
-              />
-            </div>
-            <div className="grid items-start justify-items-start">
-              <div
-                id="accent_right_triangledown_contacts"
-                className="accent-right-triangle-down mt-[9rem]"
-              />
-            </div>
-            <div className="grid items-start">
-              <div
-                id="accent_continue_contacts"
-                className="not-accent-continue mr-[-1px] mt-[9rem] z-1"
-              />
-            </div>
+          <div className="grid items-start justify-items-end">
+            <div
+              id="accent_left_triangledown_contacts"
+              className="accent-left-triangle-down mt-[9rem] mr-[-2px]"
+            />
+          </div>
+          <div className="grid items-start justify-items-start">
+            <div
+              id="accent_right_triangledown_contacts"
+              className="accent-right-triangle-down mt-[9rem]"
+            />
+          </div>
+          <div className="grid items-start">
+            <div
+              id="accent_continue_contacts"
+              className="accent-continue mr-[-1px] mt-[9rem] z-1"
+            />
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

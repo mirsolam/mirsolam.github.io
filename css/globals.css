@@ -331,6 +331,12 @@ input[type="number"] {
   }
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 300px) {
+  .nav-text {
+    margin-bottom: 2rem;
+  }
+}
+
 @media only screen and (max-width: 1125px) and (min-width: 1024px) {
   .nav-text {
     margin: 0 1.5rem;

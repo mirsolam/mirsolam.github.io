@@ -57,7 +57,7 @@ export default function NavBar({
         <div
           id="stack"
           data-name="navtext"
-          className={`my-8 nav-text text-center cursor-pointer ${theme} xs:text-sm ${
+          className={`nav-text text-center cursor-pointer ${theme} xs:text-sm ${
             active === "stack" ? "underline decoration-2" : ""
           }`}
           hidden={!isMobileMenuActive}
@@ -79,7 +79,7 @@ export default function NavBar({
         <div
           id="projects"
           data-name="navtext"
-          className={`my-8 nav-text text-center cursor-pointer ${theme} xs:text-sm ${
+          className={`nav-text text-center cursor-pointer ${theme} xs:text-sm ${
             active === "projects" ? "underline decoration-2" : ""
           }`}
           hidden={!isMobileMenuActive}
@@ -90,7 +90,7 @@ export default function NavBar({
         <div
           id="contacts"
           data-name="navtext"
-          className={`nav-text text-center cursor-pointer ${theme} mt-8 xs:text-sm ${
+          className={`nav-text text-center cursor-pointer ${theme} xs:text-sm ${
             active === "contacts" ? "underline decoration-2" : ""
           }`}
           hidden={!isMobileMenuActive}
@@ -101,7 +101,7 @@ export default function NavBar({
         <div
           id="linkedin"
           data-name="navtext"
-          className={`nav-text text-center cursor-pointer ${theme} mt-8 xs:text-sm ${
+          className={`nav-text text-center cursor-pointer ${theme} xs:text-sm ${
             active === "contacts" ? "underline decoration-2" : ""
           }`}
           hidden={!isMobileMenuActive}

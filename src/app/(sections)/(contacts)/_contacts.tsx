@@ -79,13 +79,13 @@ export default function Contacts() {
     >
       <div className="h-screen grid grid-row-1 items-center justify-items-center">
         <div className="grid row-start-1 items-center justify-items-center">
-          <div className="grid items-start justify-items-end">
+          <div className="flex items-start justify-items-end justify-end">
             <div
               id="accent_left_triangleup_contacts"
               className="accent-left-triangle-up mt-[-8.85rem] mr-[-1px] xs:mr-[0px]"
             />
           </div>
-          <div className="grid items-start justify-items-start">
+          <div className="flex items-start justify-items-start justify-start">
             <div
               id="accent_right_triangleup_contacts"
               className="accent-right-triangle-up mt-[-8.85rem] ml-[2px] xs:ml-[2px]"
@@ -167,13 +167,13 @@ export default function Contacts() {
             </>
           )}
 
-          <div className="grid items-start justify-items-end">
+          <div className="flex items-start justify-items-end justify-end">
             <div
               id="accent_left_triangledown_contacts"
               className="accent-left-triangle-down mt-[9rem] mr-[-2px]"
             />
           </div>
-          <div className="grid items-start justify-items-start">
+          <div className="flex items-start justify-items-start justify-start">
             <div
               id="accent_right_triangledown_contacts"
               className="accent-right-triangle-down mt-[9rem]"

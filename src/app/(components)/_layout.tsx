@@ -45,7 +45,8 @@ export default function Layout({
       .getBoundingClientRect();
 
     const distance = accentLeft!.right - logoParent!.left;
-    root.style.setProperty("--home-side-accent-margin", `${distance}px`);
+    if (distance !== 0)
+      root.style.setProperty("--home-side-accent-margin", `${distance}px`);
 
     root.style.setProperty(
       "--home-side-accent-width",
@@ -61,7 +62,7 @@ export default function Layout({
           ?.getBoundingClientRect().top ?? 0;
       const nextTop =
         document
-          .getElementById(`accent_left_triangleup_${rootVariables[key].next}`)
+          .getElementById(`accent_right_triangleup_${rootVariables[key].next}`)
           ?.getBoundingClientRect().top ?? 0;
       const distance = Math.abs(nextTop - selfBottom) + 1;
 

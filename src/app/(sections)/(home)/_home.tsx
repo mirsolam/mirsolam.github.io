@@ -10,7 +10,7 @@ export default function Home() {
       <div className="h-screen grid grid-row-1 items-center justify-items-center">
         <div className="grid row-start-1 items-center justify-items-center">
           <div className="grid grid-cols-3 items-center justify-items-center">
-            <div className="grid col-start-1 items-center justify-items-end">
+            <div className="flex col-start-1 items-center justify-items-end justify-end">
               <div
                 id="accent_left_home"
                 className="accent-line xs:mr-(--home-side-accent-margin)"
@@ -28,7 +28,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="grid col-start-3 items-center justify-items-start">
+            <div className="flex col-start-3 items-center justify-items-start justify-start">
               <div
                 id="accent_right_home"
                 className="accent-line xs:ml-(--home-side-accent-margin)"

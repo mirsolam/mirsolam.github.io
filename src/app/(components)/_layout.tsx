@@ -30,6 +30,7 @@ export default function Layout({
     main: IntersectionObserver | null;
     prev: { id: string; theme: string };
   }>({ main: null, prev: { id: "", theme: "" } });
+  const innerWidthRef = useRef<number>(0);
 
   const startObserver = useCallback(() => {
     initializeObserver(observerRef, setActive);
@@ -73,7 +74,10 @@ export default function Layout({
   function adjustLength() {
     const root = document.querySelector(":root")! as HTMLElement;
 
-    adjustHomeSideAccentMeasurements(root);
+    if (innerWidthRef.current !== window.innerWidth) {
+      innerWidthRef.current = window.innerWidth;
+      adjustHomeSideAccentMeasurements(root);
+    }
     adjustContinueLength(root);
   }
 
